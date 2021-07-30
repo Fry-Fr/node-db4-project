@@ -10,8 +10,6 @@ async function getRecipeById(recipe_id) {
     .orderBy('steps.step_number', 'asc')
     .where({ 'steps.recipe_id': recipe_id });
     const ingredients = await db('ingredients').where({ "ingredients.recipe_id": recipe_id });
-
-    ;
     
     return {
         "recipe_id": recipe.recipe_id,
