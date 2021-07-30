@@ -4,7 +4,7 @@ exports.up = function(knex) {
       tbl.increments('step_id');
       tbl.integer('step_number')
         .notNullable();
-      tbl.string('step_instuctions')
+      tbl.string('step_instructions')
         .notNullable();
       tbl.integer('recipe_id')
         .unsigned()
