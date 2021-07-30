@@ -2,10 +2,10 @@ const db = require('../data/db-config');
 
 module.exports = {
     getRecipeById,
-    getId,
+    findRecipeById,
 }
 
-async function getId (id) {
+async function findRecipeById (id) {
     const [validId] = await db('recipes').where({ "recipe_id": id });
     return validId;
 }
