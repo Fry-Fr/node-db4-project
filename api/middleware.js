@@ -7,10 +7,11 @@ module.exports = {
 async function validateId(req, res, next) {
     const { id } = req.params;
     const vid = await Model.getId(id);
-    console.log(vid)
+
     if (!vid) {
         res.status(404).json({ message: `The ID ${id} does not exist.` });
         return;
     }
+
     next();
-}
+};
