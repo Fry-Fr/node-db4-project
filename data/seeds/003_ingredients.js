@@ -1,10 +1,10 @@
 
 exports.seed = function(knex) {
       return knex('ingredients').insert([
-        {ingredient_name: 'olive oil'},
-        {ingredient_name: 'spaghetti'},
-        {ingredient_name: 'tomatoes'},
-        {ingredient_name: 'eggs'},
-        {ingredient_name: 'butter'},
+        {ingredient_name: 'olive oil', recipe_id: 1, step_id: 2},
+        {ingredient_name: 'spaghetti', recipe_id: 1, step_id: 2},
+        {ingredient_name: 'tomatoes', recipe_id: 1, step_id: 2},
+        {ingredient_name: 'eggs', recipe_id: 2, step_id: null},
+        {ingredient_name: 'butter', recipe_id: 2, step_id: null},
       ]);
     };
