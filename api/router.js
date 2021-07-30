@@ -1,9 +1,16 @@
 const router = require('express').Router();
+const Model = require('./model');
 
-router.get('/recipe', (req, res, next) => {
-    res.send(`
-        <h3>Hello from express /api/recipe route</h3>
-    `)
+router.get('/recipes/:id', (req, res, next) => {
+    const { id } = req.params;
+
+    Model.getRecipeById(id)
+        .then(recipe => {
+            recipe
+            ? res.json(recipe)
+            : res.status(404).json({ message: `The ID ${id} does not exist.` })
+        })
+        .catch(err => next(err))
 });
 
 module.exports = router;
